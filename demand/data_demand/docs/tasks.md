@@ -1,5 +1,15 @@
 # Tasks
 
+## Next Time
+
+- [ ] calc the CPU power
+- [ ] find the GPU power usage of different GPU models
+- [ ] create baseline for GPU power when in IDLE mode
+- [ ] create the baseline for CPU power usage
+- [ ] create time probability of for hours of day
+
+## Overall
+
 - [ ] read some articles on data driven design of data center demand model
 - [ ] create the base GPU demand of instances
   - By combining the data of sensors and start and end time of each instance we can easily create the GPU demand of each instance
