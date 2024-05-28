@@ -1,10 +1,18 @@
 # Tasks
 
+## This time
+
+- [x] read the references for the utilization based and task based power consumption models from [power consumption models](https://sci-hub.st/https://ieeexplore.ieee.org/abstract/document/8807458), the following refrences:
+- [ ] read [power consumption models new](https://sci-hub.st/https://ieeexplore.ieee.org/abstract/document/7279063/)
+  - [ ] extract models from the summary
+  - [ ] read thoroughly the article
+
 ## Next Time
 
-- [ ] calc the CPU power
-- [ ] find the GPU power usage of different GPU models
-- [ ] create baseline for GPU power when in IDLE mode
+- [x] calc the ACTIVE GPU power based on different GPU models
+- [ ] fix bug on the mean and sum models
+- [x] find the GPU power usage of different GPU models
+- [x] create baseline for GPU power when in IDLE mode
 - [ ] create the baseline for CPU power usage
 - [ ] create time probability of for hours of day
 
