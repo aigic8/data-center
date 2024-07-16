@@ -1,4 +1,4 @@
-# Tasks
+# Data Demand
 
 ## Ideas
 
@@ -28,8 +28,8 @@
 - [x] find the good articles with the keyword "gpu data center demand"
 - [x] check out `GPUCloudSim` tool from article
 - [x] organize articles in the directory
-- [ ] install `Idea`
-- [ ] do an active usage of GPUCouldSim
+- [ ] make a basic load with [GPUCloudSim](https://github.com/weisselbiad/gpucloudsim)
+- [ ] check out [CloudSimPlus](https://github.com/cloudsimplus/cloudsimplus)
 - [ ] check out query `GPU server power model data center`
 - [ ] check the articles for utilization based modeling in review article 1 (table 7) in `r001`
 - [ ] check reliability analysis for data center (like `r001`)
