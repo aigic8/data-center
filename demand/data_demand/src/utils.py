@@ -1,5 +1,34 @@
 import polars as pl
 from enum import StrEnum
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True, kw_only=True)
+class GPUInfo:
+    name: str
+    idle_power: float
+    max_power: float
+
+
+# TODO: check how realistic is passive power consumption, as far as I know
+# is should be between 0 and 10W. So it is not so far off to consider it 5
+gpus_dict: dict[str, GPUInfo] = {
+    # ref: https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/T4%20Product%20Brief.pdf
+    # ref idle: https://www.servethehome.com/nvidia-tesla-t4-ai-inferencing-gpu-review/5/
+    "T4": GPUInfo(name="T4", idle_power=15, max_power=70),
+    # ref: https://www.nvidia.com/en-us/data-center/v100/
+    # ref idle: https://sc20.supercomputing.org/proceedings/tech_poster/poster_files/rpost131s2-file2.pdf
+    "V100": GPUInfo(name="V100", idle_power=27, max_power=275),
+    "V100M32": GPUInfo(name="V100", idle_power=27, max_power=275),
+    # ref: https://images.nvidia.com/content/tesla/pdf/nvidia-tesla-p100-datasheet.pdf
+    # ref idle: https://www.reddit.com/r/homelab/comments/1cby1p9/nvidia_tesla_p100_idle_power_draw/
+    # ref idle: https://sc20.supercomputing.org/proceedings/tech_poster/poster_files/rpost131s2-file2.pdf
+    "P100": GPUInfo(name="P100", idle_power=25, max_power=300),
+    # according to https://github.com/alibaba/clusterdata/tree/master/cluster-trace-gpu-v2020
+    # misc is k80, k60 and k40m
+    # ref: https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/Tesla-K80-BoardSpec-07317-001-v05.pdf
+    "MISC": GPUInfo(name="MISC", idle_power=5, max_power=300),
+}
 
 
 class DataJoinMethod(StrEnum):
@@ -49,13 +78,16 @@ def minly_to_daily(
 
 def add_min_cols(df: pl.DataFrame, cols: list[str], suffix="_min"):
     return df.with_columns(
-        [pl.col(col).mul(1 / 60).round().alias(f"{col}{suffix}") for col in cols]
+        [
+            pl.col(col).mul(1 / 60).round().cast(pl.Int64).alias(f"{col}{suffix}")
+            for col in cols
+        ]
     )
 
 
 def make_ts(
     df: pl.DataFrame,
-    value_col,
+    value_col: str,
     start_col="start_time_min",
     end_col="end_time_min",
 ) -> pl.DataFrame:
