@@ -13,7 +13,7 @@ class GPUInfo:
 # TODO: check how realistic is passive power consumption, as far as I know
 # is should be between 0 and 10W. So it is not so far off to consider it 5
 gpus_dict: dict[str, GPUInfo] = {
-    # ref: https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/T4%20Product%20Brief.pdf
+    # ref: https://www.nvidia.com/content/dam/en-zz/solutions/data-center/tesla-product-literature/t4%20product%20brief.pdf
     # ref idle: https://www.servethehome.com/nvidia-tesla-t4-ai-inferencing-gpu-review/5/
     "T4": GPUInfo(name="T4", idle_power=15, max_power=70),
     # ref: https://www.nvidia.com/en-us/data-center/v100/
