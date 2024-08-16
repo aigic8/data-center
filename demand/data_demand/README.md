@@ -56,6 +56,8 @@
 - `data`
   - articles
     - `a001_mit-gpu-data`: a paper explaining the dataset of MIT gpus
+    - **IMPORTAT**: three datasets are in this paper that need to be explored
+    -
 - `dc-gpu`
   - articles
     - `p001_heterogeneous_cloud_dc`: a paper on gpu models
