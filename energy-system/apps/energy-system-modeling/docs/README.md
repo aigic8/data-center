@@ -54,6 +54,7 @@ articles like these ones:
 - <https://www.sciencedirect.com/science/article/abs/pii/S0360544217301548>
 - <https://www.sciencedirect.com/science/article/abs/pii/S0196890418309415> (contains good data)
 - <https://www.mdpi.com/1996-1073/15/10/3579> (contains good data) (good source for structuring the function)
+  - the wind turbine model is poorly written makes it loose it's semantic meaning
 
 ### Change of Height (Power law)
 
@@ -76,3 +77,5 @@ Power law is used to change the height of wind speed, the source of the formula 
 - Check if inverters has enough inputs
 - [ ] add degradation rates for pv and wind turbines
 - [ ] choose turbine models and document the process
+- [ ] add automatic data fetching and cleaning for weather data
+- [ ] go for a single directory with all the applications

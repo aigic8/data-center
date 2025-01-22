@@ -26,9 +26,9 @@ def wt_power(wind_speed: ArrayLike, t: WindTurbine):
     power[(ws_np < t.cut_in_speed) & (ws_np > t.cut_out_speed)] = 0
     power[(ws_np >= t.rated_speed) & (ws_np <= t.cut_out_speed)] = t.rated_power
     filter = (ws_np >= t.cut_in_speed) & (ws_np < t.cut_out_speed)
-    power[filter] = t.efficiency * (
+    power[filter] = (
         (ws_np[filter] ** 3 - t.cut_in_speed**3)
         / (t.rated_speed**3 - t.cut_in_speed**3)
         * t.rated_power
     )
-    return power
+    return t.efficiency * power
