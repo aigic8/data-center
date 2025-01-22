@@ -1,5 +1,16 @@
 # Energy Systems
 
+- [Energy Systems](#energy-systems)
+  - [PV System](#pv-system)
+    - [Choosing Panels](#choosing-panels)
+    - [Choosing Inverters](#choosing-inverters)
+      - [Result](#result)
+    - [Designing System](#designing-system)
+  - [Wind Turbine Model](#wind-turbine-model)
+    - [Modeling](#modeling)
+    - [Change of Height (Power law)](#change-of-height-power-law)
+  - [To DOs](#to-dos)
+
 ## PV System
 
 ### Choosing Panels
@@ -32,6 +43,24 @@
 - The Max Power of Inverter should match panels
 - The Voltage of panels should match the inverter's
 
+## Wind Turbine Model
+
+### Modeling
+
+I've only seen one modeling method of wind turbine. Though there is also a more sophisticated library
+in python, since the model is easy to program and accurate enough, I'd use it. It can be found in various
+articles like these ones:
+
+- <https://www.sciencedirect.com/science/article/abs/pii/S0360544217301548>
+- <https://www.sciencedirect.com/science/article/abs/pii/S0196890418309415> (contains good data)
+- <https://www.mdpi.com/1996-1073/15/10/3579> (contains good data) (good source for structuring the function)
+
+### Change of Height (Power law)
+
+Power law is used to change the height of wind speed, the source of the formula is from the following article:
+
+- <https://www.mdpi.com/1996-1073/15/10/3579>
+
 ## To DOs
 
 - [ ] Check if other inverter brands has hybrid inverters for their batteries (Sunny Power does not!)
@@ -45,3 +74,5 @@
   - `200kW`
   - `300kW`
 - Check if inverters has enough inputs
+- [ ] add degradation rates for pv and wind turbines
+- [ ] choose turbine models and document the process
