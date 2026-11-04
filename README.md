@@ -70,9 +70,3 @@ neglected. A utilization based lab script is in `lab/utilization_server_cpu.py`.
 
 - Python 3.11+
 - Jupyter (notebooks are the primary working format)
-
-## Status
-
-This is an ongoing research project. Current focus areas include utilization
-based server power models, data center reliability analysis, and workload driven
-demand modeling.
